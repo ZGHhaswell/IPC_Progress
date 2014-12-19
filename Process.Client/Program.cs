@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Progress.Client
@@ -16,6 +17,7 @@ namespace Progress.Client
 
             m_Service.Open();
 
+            int sum = 0;
 
             using (var progressProxy = new ProgressClientProxy())
             {
@@ -24,13 +26,18 @@ namespace Progress.Client
                     if(Instance.Instances.IsCanceled)
                         break;
                     progressProxy.Call();
+                    for (int j = 0; j < 1000000000; j++)
+                    {
+                        int a = 1 + 1;
+                    }
+                    sum++;
                     Console.WriteLine("Client Called");
                 }
 
             }
 
 
-
+            Console.WriteLine(sum);
             Console.ReadLine();
         }
     }

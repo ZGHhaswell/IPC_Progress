@@ -8,7 +8,7 @@ using System.ServiceModel;
 
 namespace Progress.Client
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, ConcurrencyMode = ConcurrencyMode.Multiple) ]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Reentrant) ]
     public class ProgressClientProxy : ClientBase<IProgress> , IProgress
     {
         public ProgressClientProxy()

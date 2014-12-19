@@ -8,7 +8,7 @@ using Progress.Core;
 
 namespace Progress.Client
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ProgressBackServerProxy : IProgressBack
     {
         public void CallBack()

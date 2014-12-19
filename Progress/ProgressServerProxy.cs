@@ -11,14 +11,26 @@ namespace Progress.Server
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ProgressServerProxy : IProgress
     {
+        private bool isCalled = false;
+
         public void Call()
         {
             Console.WriteLine("Server Called");
 
-            using (var progressBackClientProxy = new ProgressBackClientProxy())
+            if (!isCalled)
             {
-                progressBackClientProxy.CallBack();
+                Action action = () =>
+                {
+                    using (var progressBackClientProxy = new ProgressBackClientProxy())
+                    {
+                        progressBackClientProxy.CallBack();
+                    }
+                    Console.WriteLine("11");
+                };
+                action.BeginInvoke(null, null);
+                isCalled = true;
             }
+            
         }
     }
 }

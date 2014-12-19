@@ -20,6 +20,8 @@ namespace Progress.Server
   
             m_Service.Open();
 
+            
+
             Console.ReadLine();
         }
     }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progress.Server", "Progress\Progress.Server.csproj", "{5CB2420C-AB1B-4215-9575-1BAFA3DA5518}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progress.Server", "Progress.Server\Progress.Server.csproj", "{5CB2420C-AB1B-4215-9575-1BAFA3DA5518}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progress.Core", "Progress.Core\Progress.Core.csproj", "{A953E1C4-C0DF-4A3D-8EA2-A7A51A322C45}"
 EndProject
